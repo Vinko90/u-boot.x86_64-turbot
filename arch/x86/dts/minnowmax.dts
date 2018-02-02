@@ -106,9 +106,22 @@
 			device_type = "cpu";
 			compatible = "intel,baytrail-cpu";
 			reg = <1>;
+			intel,apic-id = <2>;
+		};
+
+		cpu@2 {
+			device_type = "cpu";
+			compatible = "intel,baytrail-cpu";
+			reg = <2>;
 			intel,apic-id = <4>;
 		};
 
+		cpu@3 {
+			device_type = "cpu";
+			compatible = "intel,baytrail-cpu";
+			reg = <3>;
+			intel,apic-id = <6>;
+		};
 	};
 
 	pci {
@@ -318,9 +331,12 @@
 
 	microcode {
 		update@0 {
-#include "microcode/m0130673325.dtsi"
+#include "microcode/m0230671117.dtsi"
 		};
 		update@1 {
+#include "microcode/m0130673325.dtsi"
+		};
+		update@2 {
 #include "microcode/m0130679907.dtsi"
 		};
 	};
